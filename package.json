@@ -1,0 +1,23 @@
+{
+  "name": "mich-mern-skillsearch",
+  "version": "1.0.0",
+  "description": "simple MERN app",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install-client": "cd client && npm build",
+    "build": "cd client && npm run build",
+    "client": "cd client && npm start",
+    "start": "node server.js",
+    "heroku-postbuild": "npm run install-client && npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}

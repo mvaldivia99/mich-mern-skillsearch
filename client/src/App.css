@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: auto;
+  margin: 0 auto;
+  background-color: rgb(202, 226, 226);
+}
+.navbar h1 {
+  color: #3c4788;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  color: white;
+  border-radius: 10% 25%;
+  background-color: rgb(52, 114, 206);
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+    color: #0428f0;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* student list page */
+.student-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+.student-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.student-preview h2 {
+  font-size: 20px;
+  color: #3c4788;
+  margin-bottom: 8px;
+}
+.student-preview a{
+  text-decoration: none;
+}
+
+/* student details page */
+.student-details h2 {
+  font-size: 20px;
+  color: #3c4788;
+  margin-bottom: 10px;
+}
+.student-details div {
+  margin: 20px 0;
+}
+.student-details button {
+  color: #3c4788;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* create new student form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: #3c4788;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+    color: #3c4788;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+} 
