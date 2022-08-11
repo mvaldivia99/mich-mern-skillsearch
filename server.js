@@ -25,8 +25,6 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
     if (process.env.NODE_ENV === "production"){
         app.use(express.static("client/build"));
 
-        app.use(express.static("client/build"));
-
         app.get('*', (req, res) => {
           res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
         });
