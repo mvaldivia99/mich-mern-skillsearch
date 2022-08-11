@@ -7,15 +7,12 @@ const StudentDetails = () => {
     // get the parameters from the url(?)
     const { id } = useParams();
 
-    // from content.js, change students to students
-    const { data: student, isLoading, errorMessage } = useGetRequest('http://localhost:5000/students/'+id);
+    const { data: student, isLoading, errorMessage } = useGetRequest('/students/'+id);
 
-    // for changing route after delete
     const navigate = useNavigate();
 
-    //========= final step!
     const deleteStudent = () => {
-        fetch('http://localhost:5000/students/' + student._id, {
+        fetch('/students/' + student._id, {
             method: 'DELETE'
         })
         .then(() => {

@@ -23,7 +23,7 @@ const StudentCreate = () => {
         //2. create a basic fetch first
         //3. give the method argument
         //4. give the header argument; we need to say what type of content we'll be sending with our request
-        fetch('http://localhost:5000/students/', {
+        fetch('/students//', {
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(student)

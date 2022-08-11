@@ -4,7 +4,7 @@ import useGetRequest from "./useGetRequest";
 
 const Content = () => {
     const [searchText, setSearchText] = useState("");
-    const { data: students, isLoading, errorMessage } = useGetRequest('http://localhost:5000/students');
+    const { data: students, isLoading, errorMessage } = useGetRequest('/students');
     
     const deleteHandler = (id) => {
         const list = students.filter(student => student.id != id);
