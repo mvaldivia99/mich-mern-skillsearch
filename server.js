@@ -6,7 +6,7 @@ const students = require("./students");
 const cors = require("cors");
 const path = require("path");
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/Test";
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mongodb.net/SkillSpireSearch', { useNewUrlParser : true})
@@ -21,15 +21,6 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
     app.listen(PORT, () => {
         console.log("server has started");
     });
-
-    if (process.env.NODE_ENV === "production"){
-        app.use(express.static("client/build"));
-
-        app.get('*', (req, res) => {
-          res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-        });
-    }
-
 
     // will retrieve the students page and display all students
     app.get("/students", async(req, res) => {
@@ -118,6 +109,14 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
             res.status(404);
         }
     })
+
+    if (process.env.NODE_ENV === "production"){
+        app.use(express.static("client/build"));
+
+        app.get('*', (req, res) => {
+          res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        });
+    }
 });
 
 
