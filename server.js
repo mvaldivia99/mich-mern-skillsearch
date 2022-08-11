@@ -30,7 +30,7 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
     app.get("/students", async(req, res) =>{
         
         const data = await students.find();
-        res.send(data);
+        res.json(data);
 
     }) 
 
@@ -61,7 +61,7 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
         });
  
         await student.save();
-        res.json(student);
+        res.json();
     })
 
 
