@@ -2,13 +2,10 @@ const { application } = require("express");
 const express = require("express");
 const mongoose = require("mongoose");
 const students = require("./students.js");
-const cors = require("cors"); //AADDDD AT END
+const cors = require("cors");
+const path = require("path");
 
-
-//1. 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/";
-
-// process.env reads environmental variables that were set when the process was started
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/"
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mongodb.net/SkillSpireSearch', { useNewUrlParser: true })
@@ -16,14 +13,18 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
 
     const app = express();
     app.use(cors()); 
-    app.listen(PORT, () => { //2. change the port variable
+    app.listen(PORT, () => {
         console.log("server has started");
     })
 
-
-    //2. 
+    
+    // if we are in production use the client build
     if (process.env.NODE_EV === "production"){
         app.use(express.static("client/build"));
+
+        app.get("*", (req, res) => {
+            res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        });
     }
 
     app.get("/students", async(req, res) =>{
