@@ -7,7 +7,7 @@ const useGetRequest = (path) => {
     
 
     useEffect(() => {
-        const abortController = new AbortController(); // KEEP THIS IN THE USEEFFECT 
+        const abortController = new AbortController(); 
         fetch(path, {signal: abortController.signal})
         .then(body => {
             if (!body.ok){ 

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const students = require("./students");
 const cors = require("cors");
-
+const path = require("path");
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/";
 const PORT = process.env.PORT || 5000;
